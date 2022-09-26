@@ -6,7 +6,7 @@ U.C. de Redes Móveis 2022/2023
 - [@joseluisgomes](https://www.github.com/joseluisgomes)
 - [@diiogocerqueira](https://www.github.com/diiogocerqueira)
 - [@ruipCunha0](https://github.com/ruipCunha0)
-
+- [@Chiquinho2oo1](https://github.com/Chiquinho2oo1)
 
 ## Documentation
 
