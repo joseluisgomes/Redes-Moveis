@@ -1,8 +1,3 @@
-# CDMA signal without noise
-signal1_file = "e1.txt"
-signal2_file = "e2.txt"
-
-
 def signal_data(file):
     try:
         with open(file) as file_stream:
@@ -24,8 +19,23 @@ def signal_data(file):
         exit(0)
 
 
+def convert_to_volts(bits):
+    volts = list()
+    for bit in bits:
+        if bit == "0":
+            volts.append(1)
+        else:
+            volts.append(-1)
+    return volts
+
+
+# CDMA signals without noise
+signal1_file = "e1.txt"
+signal2_file = "e2.txt"
+
 signal1_data = signal_data(signal1_file)
 signal2_data = signal_data(signal2_file)
 
-print(f"Signal 1 data: {signal1_data}\n")
-print(f"Signal 2 data: {signal2_data}\n")
+spr_code_volts = convert_to_volts(signal1_data["spreading_code"])  # Spreading code in volts
+
+print(signal1_data)
