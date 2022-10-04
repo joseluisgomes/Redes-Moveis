@@ -1,32 +1,28 @@
-import numpy
-
-
 def bits_to_volts(bits):
     index = 0
     while index < len(bits):
         if bits[index] == 0:
             bits[index] = -1  # bit 0 = -1 V
-        index += 1
+        index += 1  # bit 1 = -1 V
     return bits  # Bits converted to volts
 
 
-def multiply_arrays(arr, chip):
-    arraym = [0] * len(arr)
-    x = 0
+def multiply(signal, chips):  # Multiply each signal bit with each chip's bit
+    product_result = [0] * len(signal)
     y = 0
     k = 0
     tam = 0
-    while x < len(arr):
+
+    for bit in signal:
         while y < 1:
-            if tam == len(chip):
+            if tam == len(chips):
                 tam = 0
-            arraym[k] = float(arr[x]) * float(chip[tam + y])
+            product_result[k] = float(bit) * float(chips[tam + y])
             y = y + 1
             k = k + 1
         tam = tam + 1
         y = 0
-        x = x + 1
-    return arraym
+    return product_result
 
 
 def signal_data(file, signal_num):
@@ -50,18 +46,14 @@ def signal_data(file, signal_num):
             while x < len(spreading_code):
                 integer_map = map(float, spreading_code[x])
                 integer_list = list(integer_map)
-                chipMinus1 = bits_to_volts(integer_list)
-                # chip_rotate = rotate_chip(chipMinus1,posicao)
-                multChip.append(multiply_arrays(signal, chipMinus1))
+                chips_in_volts = bits_to_volts(integer_list)
+
+                multChip.append(multiply(signal, chips_in_volts))
                 x += 1
             q = 0
-            x = 0
-            array_media = []
             while q < len(transmitted_data):
                 array = multChip[q]
                 finalArray = []
-                count = 0
-                fim = len(array)
                 f = 0
                 while f < len(array):
                     t = 0
@@ -75,32 +67,25 @@ def signal_data(file, signal_num):
                     soma = 0
                     f = f + spreading_factor[0]
 
-                errors = 0
+                erros = 0
                 mess = transmitted_data[q]
                 r = 0
                 while r < len(mess):
                     if str(finalArray[r]) != str(mess[r]):
-                        errors += 1
+                        erros += 1
                     r = r + 1
 
                 print(f"---- Signal {signal_num} ----")
-                # print("chip atrasado:"+str(posicao))
-                print("Errors: " + str(errors))
-                print("BER: " + str(errors / 1000))
-                array_media.append((errors / 1000))
-                # coef, p = spearmanr(mess, finalArray)
-                # print('Spearman Coefficient:%.3f' % coef)
+                print("Errors: " + str(erros))
+                print("BER: " + str(erros / 1000))
                 q = q + 1
-
-            # posicao = posicao + 1
-        print("BER mean: " + str(numpy.mean(array_media)))
     except OSError:
         print(f"Failed to open {file} file")
         exit(0)
 
 
-signal1_file = "../signal_files/e1.txt"
-signal2_file = "../signal_files/e2.txt"
+signal1_file = "e1.txt"
+signal2_file = "e2.txt"
 
 signal_data(signal1_file, "1")
 signal_data(signal2_file, "2")
