@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00480e97-0124-4d1e-bb6e-0599d3ba4c16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receiver/receiver.py" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/receiver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receiver/receiver_v2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/receiver/receiver_v3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/receiver/rui_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/rui_version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3_-1dB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/c3_-1dB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3_-2dB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/c3_-2dB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3_0dB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/c3_0dB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3_1dB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/c3_1dB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3_2dB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/c3_2dB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/c3_5dB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/c3_5dB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/e1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_files/e2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/e2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/cdma-decoder.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cdma-decoder/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/receiver/rui_version.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,13 +72,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/receiver/rui_version.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint suspend="NONE" type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
