@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00480e97-0124-4d1e-bb6e-0599d3ba4c16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receiver.py" beforeDir="false" afterPath="$PROJECT_DIR$/receiver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/signal_files/e1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/signal_files/e2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/receiver.py" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/receiver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/receiver_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/receiver_v2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,15 @@
     &quot;last_opened_file_path&quot;: &quot;/home/joseluisgomes/Github/UMinho/Redes-Moveis/CDMA&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/receiver" />
+      <recent name="$PROJECT_DIR$/signal_files" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

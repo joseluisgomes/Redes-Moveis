@@ -30,8 +30,8 @@ def convert_to_volts(bits):
 
 
 # CDMA signals without noise
-signal1_file = "e1.txt"
-signal2_file = "e2.txt"
+signal1_file = "../signal_files/e1.txt"
+signal2_file = "../signal_files/e2.txt"
 
 signal1_data = signal_data(signal1_file)
 signal2_data = signal_data(signal2_file)

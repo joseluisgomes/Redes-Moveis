@@ -10,15 +10,6 @@ def bits_to_volts(bits):
     return bits  # Bits converted to volts
 
 
-def volts_to_bits(volts):
-    index = 0
-    while index < len(volts):
-        if volts[index] == -1:  # bit 0 = -1 V
-            volts[index] = 0
-        index += + 1
-    return volts  # Volts converted to bits
-
-
 def multiply_arrays(arr, chip):
     arraym = [0] * len(arr)
     x = 0
@@ -84,19 +75,19 @@ def signal_data(file, signal_num):
                     soma = 0
                     f = f + spreading_factor[0]
 
-                erros = 0
+                errors = 0
                 mess = transmitted_data[q]
                 r = 0
                 while r < len(mess):
                     if str(finalArray[r]) != str(mess[r]):
-                        erros += 1
+                        errors += 1
                     r = r + 1
 
                 print(f"---- Signal {signal_num} ----")
                 # print("chip atrasado:"+str(posicao))
-                print("Errors: " + str(erros))
-                print("BER: " + str(erros / 1000))
-                array_media.append((erros / 1000))
+                print("Errors: " + str(errors))
+                print("BER: " + str(errors / 1000))
+                array_media.append((errors / 1000))
                 # coef, p = spearmanr(mess, finalArray)
                 # print('Spearman Coefficient:%.3f' % coef)
                 q = q + 1
@@ -108,8 +99,8 @@ def signal_data(file, signal_num):
         exit(0)
 
 
-signal1_file = "e1.txt"
-signal2_file = "e2.txt"
+signal1_file = "../signal_files/e1.txt"
+signal2_file = "../signal_files/e2.txt"
 
 signal_data(signal1_file, "1")
 signal_data(signal2_file, "2")
