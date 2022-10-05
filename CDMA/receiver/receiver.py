@@ -52,27 +52,27 @@ def signal_errors(signal_data):  # Calculate the BER of the given signal
     errors = 0
     while index < len(transmitted_data):
         sum_results = []
-        f = 0
-        while f < len(multiply_results):
-            t = 0
-            while t < spreading_factor:
-                total_sum += float(multiply_results[int(f + t)])
-                t += 1
+        index_1 = 0
+        while index_1 < len(multiply_results):
+            index_2 = 0
+            while index_2 < spreading_factor:
+                total_sum += float(multiply_results[int(index_1 + index_2)])
+                index_2 += 1
             if total_sum > 0:
                 sum_results.append("1")
             else:
                 sum_results.append("0")
             total_sum = 0
-            f = f + spreading_factor
+            index_1 = index_1 + spreading_factor
 
         errors = 0
         data_index = 0
         while data_index < len(transmitted_data):
             if sum_results[data_index] != transmitted_data[data_index]:
                 errors += 1
-            data_index = data_index + 1
+            data_index += 1
         index += 1
-    return {"errors": errors, "BER": errors / 1000}  # TODO: MUDAR O VALOR 1000
+    return {"errors": errors, "BER": errors / len(transmitted_data)}  # BER = num_of_errors / num_of_transmitted_bits
 
 
 signal1_file = "e1.txt"
@@ -81,8 +81,5 @@ signal2_file = "e2.txt"
 signal1_data = signal_process(signal1_file)
 signal2_data = signal_process(signal2_file)
 
-print(f"---- Signal {1} ----")
-print(signal_errors(signal1_data))
-
-print(f"\n---- Signal {2} ----")
-print(signal_errors(signal2_data))
+print(f"Signal 1: {signal_errors(signal1_data)}")
+print(f"Signal 2: {signal_errors(signal2_data)}")
