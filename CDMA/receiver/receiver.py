@@ -94,8 +94,8 @@ def signal_errors(sgn_data):  # Calculate the BER of the given signal
     return {"errors": errors, "BER": ber}
 
 
-signal_file = validate_user_input()
-signal_data = signal_process(signal_file)
-signal_BER = signal_errors(signal_data)
+# signal_file = validate_user_input()
+# signal_data = signal_process(signal_file)
+# signal_BER = signal_errors(signal_data)
 
-print(f"Signal: {signal_BER}")
+# print(f"Signal: {signal_BER}")
