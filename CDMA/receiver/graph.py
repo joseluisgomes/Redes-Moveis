@@ -7,16 +7,16 @@ signal_files = ["c3_-2dB.txt", "c3_-1dB.txt", "c3_0dB.txt", "c3_1dB.txt", "c3_2d
 
 for file in signal_files:
     signal_data = receiver.signal_process(file)
-    BER.append(receiver.signal_errors(signal_data))
+    BER.append(receiver.signal_errors(signal_data)["BER"])
 
 print(BER)
-"""# plotting the points
+# plotting the points
 plot.plot(SNR, BER)
 # naming the x SNR
 plot.xlabel('x - SNR')
 # naming the y BER
 plot.xlabel('y - BER')
 # title the plot
-plot.title('Grupo Dos Fixes')
+plot.title('BER vs. SNR')
 # function to show the plot
-plot.show()"""
+plot.show()
