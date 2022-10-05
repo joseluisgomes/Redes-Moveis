@@ -1,3 +1,21 @@
+from sys import argv
+
+
+def validate_user_input():
+    if len(argv) < 2:
+        print("Not enough arguments")
+        exit(0)
+    file = argv[1]
+    if "." not in file:
+        print("Not a valid file")
+        exit(0)
+    file_format = file.split(".")[1]
+    if file_format != "txt":
+        print(f"File format \"{file_format}\" is not valid")
+        exit(0)
+    return file
+
+
 def bits_to_volts(bits):
     index = 0
     while index < len(bits):
@@ -19,9 +37,9 @@ def multiply(signal, chips):  # Multiply each signal bit with each chip's bit
     return product_result
 
 
-def signal_process(signal_file):
+def signal_process(file):
     try:
-        with open(signal_file) as filestream:
+        with open(file) as filestream:
             lines = filestream.readlines()
             signal = lines[0].strip().split(',')  # 1st line  (signal)
             transmitted_data = lines[1].strip().split(',')  # 2nd line  (transmitted_data)
@@ -33,15 +51,15 @@ def signal_process(signal_file):
                     "spreading_code": spreading_code, "spreading_factor": spreading_factor,
                     "samples_per_chip": samples_per_chip}
     except OSError:
-        print(f"Failed to open {signal_file} file")
+        print(f"Failed to open {file} file")
         exit(0)
 
 
-def signal_errors(signal_data):  # Calculate the BER of the given signal
-    signal = signal_data["signal"]
-    transmitted_data = signal_data["transmitted_data"]
-    spreading_code = signal_data["spreading_code"]
-    spreading_factor = signal_data["spreading_factor"]
+def signal_errors(sgn_data):  # Calculate the BER of the given signal
+    signal = sgn_data["signal"]
+    transmitted_data = sgn_data["transmitted_data"]
+    spreading_code = sgn_data["spreading_code"]
+    spreading_factor = sgn_data["spreading_factor"]
 
     total_sum = 0.0
     sc_mapped = map(float, spreading_code)  # Spreading code mapped into a floats map
@@ -72,14 +90,12 @@ def signal_errors(signal_data):  # Calculate the BER of the given signal
                 errors += 1
             data_index += 1
         index += 1
-    return {"errors": errors, "BER": errors / len(transmitted_data)}  # BER = num_of_errors / num_of_transmitted_bits
+    ber = errors / (len(signal) * len(transmitted_data))
+    return {"errors": errors, "BER": ber}
 
 
-signal1_file = "e1.txt"
-signal2_file = "e2.txt"
+signal_file = validate_user_input()
+signal_data = signal_process(signal_file)
+signal_BER = signal_errors(signal_data)
 
-signal1_data = signal_process(signal1_file)
-signal2_data = signal_process(signal2_file)
-
-print(f"Signal 1: {signal_errors(signal1_data)}")
-print(f"Signal 2: {signal_errors(signal2_data)}")
+print(f"Signal: {signal_BER}")
