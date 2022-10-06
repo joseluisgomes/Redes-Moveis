@@ -9,13 +9,12 @@ for file in signal_files:
     signal_data = receiver.signal_process(file)
     BER.append(receiver.signal_errors(signal_data)["BER"])
 
-print(BER)
 # plotting the points
 plot.plot(SNR, BER)
 # naming the x SNR
 plot.xlabel('x - SNR')
 # naming the y BER
-plot.xlabel('y - BER')
+plot.ylabel('y - BER')
 # title the plot
 plot.title('BER vs. SNR')
 # function to show the plot
