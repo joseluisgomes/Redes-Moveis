@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eaaafc5e-e00e-45a7-9b69-09a77b56f085" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Redes-Moveis.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/CDMA.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_-1dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_-2dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_0dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_1dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_2dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/graph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDMA/receiver/receiver.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FpMuiVSbCEsVYKWOmXohGZtgyP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eaaafc5e-e00e-45a7-9b69-09a77b56f085" name="Changes" comment="" />
+      <created>1665184798243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665184798243</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
