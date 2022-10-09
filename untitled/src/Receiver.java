@@ -74,10 +74,11 @@ public class Receiver {
         final List<Float> bits = new ArrayList<>();
 
         volts.forEach(volt -> {
-            if (volt.compareTo(-1.0f) == 0)
-                bits.add(0.0f); // bit 0 = -1.0V
-            else
-                bits.add(1.0f); // bit 1 = +1.0V
+            var difBit0 = Math.abs(-1.0f - volt); // Difference for the bit 0
+            var difBit1 = Math.abs(1.0f - volt); // Difference for the bit 1
+
+            if (difBit0 < difBit1) bits.add(0.0f);
+            else bits.add(1.0f);
         });
         return bits;
     }
