@@ -102,10 +102,10 @@ public class Receiver {
         final var decodedSignalInVolts = decodeSignal();
         final var samplesPerBit = samplesPerBit();
         final List<Float> result = new ArrayList<>(); // Sum's result
-        Float total = 0.0f;
+        float total = 0.0f;
 
         for (int i = 0; i < decodedSignalInVolts.size(); i++) {
-            total += decodedSignalInVolts.get(i);
+            total = Float.sum(total, decodedSignalInVolts.get(i));
 
             if ((i+1) % samplesPerBit == 0) {
                 result.add(total/(float)samplesPerBit);
