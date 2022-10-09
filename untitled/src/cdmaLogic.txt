@@ -1,4 +1,0 @@
-Para o ficheiro e1.txt:
-    500 amostras (sinal amostrado) / #Bits do signal original (dados transmitidos) = 25 amostras/bit
-    25 amostras/bit / fator de espelhamento = 5 amostras/Chip => o que quer dizer que cada 5 amostras do sinal codificado tem que multiplicar pelo mesmo bit do código de espelhamento
-    no final de tudo somas 25 e divides por 25 que é as amostras por bit
