@@ -19,28 +19,22 @@ public class Receiver {
                 signalData.add(line);
         } catch (IOException ioEx) { ioEx.printStackTrace(); }
 
-       this.sampledSignal = Arrays.stream(signalData.get(0).split(","))
-               .map(Float::valueOf)
-               .collect(Collectors.toList());
+        this.sampledSignal = Arrays.stream(signalData.get(0).split(","))
+                .map(Float::valueOf)
+                .collect(Collectors.toList());
 
-        for (int i = 0, lineNum = -2; i < 3; i++) {
-            lineNum += 3;
-            this.transmittedData.put(i, Arrays.stream(signalData.get(lineNum).split(","))
+        for (int i = 0, transDataLineNum = -2, spreadCodeLineNum = -1, spreadFactorLineNum = 0; i < 3; i++) {
+            transDataLineNum += 3; // Line number of the transmitted data
+            spreadCodeLineNum += 3; // Line number of the spreading code
+            spreadFactorLineNum += 3; // Line number of the spreadingFactor
+
+            this.transmittedData.put(i, Arrays.stream(signalData.get(transDataLineNum).split(","))
                     .map(Float::valueOf)
                     .collect(Collectors.toList()));
-        }
-
-
-        for (int i = 0, lineNum = -1; i < 3; i++) {
-            lineNum += 3;
-            this.spreadingCode.put(i, Arrays.stream(signalData.get(lineNum).split(","))
+            this.spreadingCode.put(i, Arrays.stream(signalData.get(spreadCodeLineNum).split(","))
                     .map(Float::valueOf)
                     .collect(Collectors.toList()));
-        }
-
-        for (int i = 0, lineNum = 0; i < 3; i++) {
-            lineNum += 3;
-            this.spreadingFactor.add(Integer.valueOf(signalData.get(lineNum)));
+            this.spreadingFactor.add(Integer.valueOf(signalData.get(spreadFactorLineNum)));
         }
     }
 
@@ -127,7 +121,7 @@ public class Receiver {
         return result;
     }
 
-    public float bitErrorRate(int transDataIndex) { // BER calculation
+    public String bitErrorRate(int transDataIndex) { // BER calculation
         final var sumResultInBits = voltsToBits(sum(transDataIndex));
         int errorCounter = 0;
         int size = sumResultInBits.size();
@@ -140,7 +134,8 @@ public class Receiver {
             if (sumBit.compareTo(transDataBit) != 0)
                 errorCounter++;
         }
-        return errorCounter/(float) size;
+        final var bitErrorRate = errorCounter/(float) size;
+        return "#Errors: " + errorCounter + "\nBER: " + bitErrorRate;
     }
 
     @Override
