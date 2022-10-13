@@ -1,16 +1,14 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Receiver {
     private final List<Float> sampledSignal; // Sampled CDMA signal
-    private final List<Float> transmittedData;
-    private final List<Float> spreadingCode;
-    private final Integer spreadingFactor;
+    private final Map<Integer, List<Float>> transmittedData = new HashMap<>();
+    private final Map<Integer, List<Float>>  spreadingCode = new HashMap<>();
+    private final List<Integer> spreadingFactor = new ArrayList<>();
 
 
     public Receiver(String filePath) {
@@ -21,41 +19,54 @@ public class Receiver {
                 signalData.add(line);
         } catch (IOException ioEx) { ioEx.printStackTrace(); }
 
-        this.sampledSignal = Arrays.stream(signalData.get(0).split(","))
-                .map(Float::valueOf)
-                .collect(Collectors.toList());
-        this.transmittedData = Arrays.stream(signalData.get(1).split(","))
-                .map(Float::valueOf)
-                .collect(Collectors.toList());
-        this.spreadingCode = Arrays.stream(signalData.get(2).split(","))
-                .map(Float::valueOf)
-                .collect(Collectors.toList());
-        this.spreadingFactor = Integer.parseInt(signalData.get(3));
+       this.sampledSignal = Arrays.stream(signalData.get(0).split(","))
+               .map(Float::valueOf)
+               .collect(Collectors.toList());
+
+        for (int i = 0, lineNum = -2; i < 3; i++) {
+            lineNum += 3;
+            this.transmittedData.put(i, Arrays.stream(signalData.get(lineNum).split(","))
+                    .map(Float::valueOf)
+                    .collect(Collectors.toList()));
+        }
+
+
+        for (int i = 0, lineNum = -1; i < 3; i++) {
+            lineNum += 3;
+            this.spreadingCode.put(i, Arrays.stream(signalData.get(lineNum).split(","))
+                    .map(Float::valueOf)
+                    .collect(Collectors.toList()));
+        }
+
+        for (int i = 0, lineNum = 0; i < 3; i++) {
+            lineNum += 3;
+            this.spreadingFactor.add(Integer.valueOf(signalData.get(lineNum)));
+        }
     }
 
     public List<Float> getSampledSignal() {
         return sampledSignal;
     }
 
-    public List<Float> getTransmittedData() {
+    public Map<Integer, List<Float>> getTransmittedData() {
         return transmittedData;
     }
 
-    public List<Float> getSpreadingCode() {
+    public Map<Integer, List<Float>> getSpreadingCode() {
         return spreadingCode;
     }
 
-    public Integer getSpreadingFactor() {
+    public List<Integer> getSpreadingFactor() {
         return spreadingFactor;
     }
 
-    public int samplesPerBit() {
-        return sampledSignal.size() / transmittedData.size(); // #Samples/Bit (of the transmitted data)
+    public int samplesPerBit(int transDataIndex) {
+        return sampledSignal.size() / transmittedData.get(transDataIndex).size(); // #Samples/Bit (of the transmitted data)
     }
 
-    public int samplesPerChip() {
+    public int samplesPerChip(int transDataIndex) {
         // For each #Samples of the coded signal has to be multiplied by the same bit of the spreading code
-        return samplesPerBit() / spreadingFactor; // #Samples/Chip
+        return samplesPerBit(transDataIndex) / spreadingFactor.get(transDataIndex); // #Samples/Chip
     }
 
     private List<Float> bitsToVolts(List<Float> bits) {
@@ -84,9 +95,9 @@ public class Receiver {
     }
 
 
-    private List<Float> decodeSignal() {
-        final var spreadCodeVolts = bitsToVolts(spreadingCode); // Spreading code in volts
-        final var samplesPerChip = samplesPerChip();
+    private List<Float> decodeSignal(int transDataIndex) {
+        final var spreadCodeVolts = bitsToVolts(spreadingCode.get(transDataIndex)); // Spreading code in volts
+        final var samplesPerChip = samplesPerChip(transDataIndex);
         final List<Float> result = new ArrayList<>(); // Product's result
         int j = 0; // Spreading code counter
 
@@ -99,9 +110,9 @@ public class Receiver {
         return result;
     }
 
-    public List<Float> sum() {
-        final var decodedSignalInVolts = decodeSignal();
-        final var samplesPerBit = samplesPerBit();
+    public List<Float> sum(int transDataIndex) {
+        final var decodedSignalInVolts = decodeSignal(transDataIndex);
+        final var samplesPerBit = samplesPerBit(transDataIndex);
         final List<Float> result = new ArrayList<>(); // Sum's result
         float total = 0.0f;
 
@@ -116,15 +127,15 @@ public class Receiver {
         return result;
     }
 
-    public float bitErrorRate() { // BER calculation
-        final var sumResultInBits = voltsToBits(sum());
+    public float bitErrorRate(int transDataIndex) { // BER calculation
+        final var sumResultInBits = voltsToBits(sum(transDataIndex));
         int errorCounter = 0;
         int size = sumResultInBits.size();
         Float sumBit, transDataBit;
 
         for (int i = 0; i < size; i++) {
             sumBit = sumResultInBits.get(i);
-            transDataBit = transmittedData.get(i);
+            transDataBit = transmittedData.get(transDataIndex).get(i);
 
             if (sumBit.compareTo(transDataBit) != 0)
                 errorCounter++;
