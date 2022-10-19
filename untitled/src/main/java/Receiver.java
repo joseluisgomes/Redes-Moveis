@@ -10,7 +10,6 @@ public class Receiver {
     private final Map<Integer, List<Float>>  spreadingCode = new HashMap<>();
     private final List<Integer> spreadingFactor = new ArrayList<>();
 
-
     public Receiver(String filePath) {
         final List<String> signalData = new ArrayList<>();
         try(var buffer = new BufferedReader(new FileReader(filePath))) {
