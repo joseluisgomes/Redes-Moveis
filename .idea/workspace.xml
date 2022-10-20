@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaaafc5e-e00e-45a7-9b69-09a77b56f085" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Redes-Moveis.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/CDMA.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_-1dB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_-2dB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_0dB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_1dB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_2dB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/c3_5dB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDMA/receiver/receiver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/Graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/LineChartEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/LineChart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/ReceiverTestDrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/LineChartEx.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ReceiverTestDrive.class" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/target/classes/ReceiverTestDrive.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +31,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

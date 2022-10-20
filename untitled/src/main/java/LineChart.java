@@ -10,26 +10,18 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 
-public class LineChartEx extends JFrame {
+public class LineChart extends JFrame {
 
-    public LineChartEx() {
-
-        initUI();
-    }
+    public LineChart() { initUI(); }
 
     private void initUI() {
+        final XYDataset dataset = createDataset();
+        final JFreeChart chart = createChart(dataset);
 
-        XYDataset dataset = createDataset();
-        JFreeChart chart = createChart(dataset);
-
-        ChartPanel chartPanel = new ChartPanel(chart);
+        final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         chartPanel.setBackground(Color.white);
         add(chartPanel);
@@ -41,27 +33,23 @@ public class LineChartEx extends JFrame {
     }
 
     private XYDataset createDataset() {
+        final var series = new XYSeries("BER vs. SNR");
+        series.add(0, 567);
+        series.add(5, 612);
+        series.add(10, 700);
+        series.add(15, 800);
+        series.add(20, 980);
 
-        var series = new XYSeries("Fase 2");
-        series.add(1, 567);
-        series.add(2, 612);
-        series.add(2, 700);
-        series.add(3, 800);
-        series.add(4, 980);
-        series.add(5, 1410);
-        series.add(6, 2350);
-
-        var dataset = new XYSeriesCollection();
+        final var dataset = new XYSeriesCollection();
         dataset.addSeries(series);
 
         return dataset;
     }
 
     private JFreeChart createChart(XYDataset dataset) {
-
-        JFreeChart chart = ChartFactory.createXYLineChart(
-                "Average salary per age",
-                "SNR",
+        final JFreeChart chart = ChartFactory.createXYLineChart(
+                "BER vs. SNR",
+                "SNR (dB)",
                 "BER",
                 dataset,
                 PlotOrientation.VERTICAL,
@@ -70,10 +58,10 @@ public class LineChartEx extends JFrame {
                 false
         );
 
-        XYPlot plot = chart.getXYPlot();
+        final XYPlot plot = chart.getXYPlot();
 
-        var renderer = new XYLineAndShapeRenderer();
-        renderer.setSeriesPaint(0, Color.RED);
+        final var renderer = new XYLineAndShapeRenderer();
+        renderer.setSeriesPaint(0, Color.BLUE);
         renderer.setSeriesStroke(0, new BasicStroke(2.0f));
 
         plot.setRenderer(renderer);
@@ -87,20 +75,9 @@ public class LineChartEx extends JFrame {
 
         chart.getLegend().setFrame(BlockBorder.NONE);
 
-        chart.setTitle(new TextTitle("Average Salary per Age",
-                        new Font("Serif", java.awt.Font.BOLD, 18)
-                )
-        );
-
+        final var font = new Font("Serif", Font.BOLD, 18);
+        final var textTitle = new TextTitle("Fase 2", font);
+        chart.setTitle(textTitle);
         return chart;
-    }
-
-    public static void main(String[] args) {
-
-        EventQueue.invokeLater(() -> {
-
-            var ex = new LineChartEx();
-            ex.setVisible(true);
-        });
     }
 }
