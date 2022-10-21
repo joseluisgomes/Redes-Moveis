@@ -12,10 +12,25 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class LineChart extends JFrame {
+    private Map<String , Map<Integer, String>> signalsData;
 
-    public LineChart() { initUI(); }
+    public LineChart(Map<String, Map<Integer,String>> signalsData) {
+        this.signalsData = Objects.requireNonNull(signalsData);
+        initUI();
+    }
+
+    public Map<String, Map<Integer, String>> getSignalsData() {
+        return signalsData;
+    }
+
+    public void setSignalsData(Map<String, Map<Integer, String>> signalsData) {
+        this.signalsData = signalsData;
+    }
 
     private void initUI() {
         final XYDataset dataset = createDataset();
@@ -27,18 +42,25 @@ public class LineChart extends JFrame {
         add(chartPanel);
 
         pack();
-        setTitle("Line chart");
+        setTitle("BER vs SNR");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private XYDataset createDataset() {
         final var series = new XYSeries("BER vs. SNR");
-        series.add(0, 567);
-        series.add(5, 612);
-        series.add(10, 700);
-        series.add(15, 800);
-        series.add(20, 980);
+
+        signalsData.keySet().forEach(file -> {
+            final var signalsBERs = signalsData.get(file);
+            final var signalsBER = signalsBERs.values().stream().toList();
+
+            final var SNR = file.split("dB")[0].split("_")[1];
+            signalsBER.forEach(BER -> {
+                final var BERValue = Float.valueOf(BER.split("BER: ")[1]);
+                final var SNRValue = Float.valueOf(SNR);
+                series.add(SNRValue, BERValue);
+            });
+        });
 
         final var dataset = new XYSeriesCollection();
         dataset.addSeries(series);

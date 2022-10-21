@@ -30,7 +30,12 @@ public class ReceiverTestDrive {
             }
             System.out.println("----------------------");
         }
-    //    EventQueue.invokeLater(() -> new LineChart().setVisible(true)); // Plot the graph
+        EventQueue.invokeLater(() -> {
+            final var lineChart = new LineChart(signalsData);
+
+            lineChart.setSignalsData(signalsData);
+            lineChart.setVisible(true);
+        }); // Plot the graph
     }
 
     private static List<String> loadFolderFiles(File folder) {
