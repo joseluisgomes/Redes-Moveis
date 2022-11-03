@@ -1,41 +1,27 @@
-import java.awt.*;
 import java.io.File;
 import java.util.*;
-import java.util.List;
 
 public class ReceiverTestDrive {
 
     public static void main(String[] args) {
-        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/untitled/signals/fase_2/"; // TODO: Change the file Path
+        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/untitled/signals/fase_1/"; // TODO: Change the folder path
         final var files = ReceiverTestDrive.loadFolderFiles(new File(folderPath));
-        final Map<String , Map<Integer, String>> signalsData = new HashMap<>(); // Signal's Bit Error Rates
+        final Map<String, String> signalsData = new HashMap<>(); // (File, Signal's (Signal of the file/key) BER)
 
         files.forEach(file -> {
             final var receiver = new Receiver(folderPath + file);
-            final var signalBERs = new HashMap<Integer, String>();
+            final var signalBER = receiver.bitErrorRate();
 
-            for (int i = 0; i < 3; i++)
-                signalBERs.put(i, receiver.bitErrorRate(i));
-
-            signalsData.put(file, signalBERs);
+            signalsData.put(file, signalBER);
         });
 
         for (String file: signalsData.keySet()) {
             System.out.printf("File " + file + " :\n");
-            final var fileSignalsData = signalsData.get(file);
+            final var signalBER = signalsData.get(file);
 
-            for (Integer signal: fileSignalsData.keySet()) {
-                final var signalBER = fileSignalsData.get(signal);
-                System.out.println(signalBER + '\n');
-            }
+            System.out.println(signalBER + '\n');
             System.out.println("----------------------");
         }
-        EventQueue.invokeLater(() -> {
-            final var lineChart = new LineChart(signalsData);
-
-            lineChart.setSignalsData(signalsData);
-            lineChart.setVisible(true);
-        }); // Plot the graph
     }
 
     private static List<String> loadFolderFiles(File folder) {
