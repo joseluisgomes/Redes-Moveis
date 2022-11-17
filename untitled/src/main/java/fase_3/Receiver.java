@@ -1,3 +1,5 @@
+package fase_3;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -83,6 +85,36 @@ public class Receiver {
         return bits;
     }
 
+    private void rotateChip() {
+
+        for(int i = 0; i < spreadingCode.size()+1; i++) {
+
+            int j;
+            Float last;
+            //Stores the last element of array
+            last = spreadingCode.get(spreadingCode.size() - 1);
+
+            for (j = spreadingCode.size() - 1; j > 0; j--) {
+                //Shift element of array by one
+                spreadingCode.set(j, spreadingCode.get(j - 1));
+            }
+            //Last element of array will be added to the start of array.
+            spreadingCode.set(0, last);
+
+
+            System.out.println();
+
+            //Displays resulting array after rotation
+            System.out.println("Array after right rotation: ");
+
+            for (Float p : spreadingCode) {
+
+                System.out.print(p + " ");
+
+            }
+        }
+
+    }
 
     private List<Float> decodeSignal() {
         final var spreadCodeVolts = bitsToVolts(spreadingCode); // Spreading code in volts
@@ -135,7 +167,7 @@ public class Receiver {
 
     @Override
     public String toString() {
-        return "Receiver{" +
+        return "fase_3.Receiver{" +
                 "sampledSignal=" + sampledSignal +
                 ", transmittedData=" + transmittedData +
                 ", spreadingCode=" + spreadingCode +

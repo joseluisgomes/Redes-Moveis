@@ -1,27 +1,23 @@
+package fase_1;
+
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class ReceiverTestDrive {
 
     public static void main(String[] args) {
-        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/untitled/signals/fase_1/"; // TODO: Change the folder path
+        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/untitled/signals/fase_1/"; // TODO: Change the file Path
         final var files = ReceiverTestDrive.loadFolderFiles(new File(folderPath));
-        final Map<String, String> signalsData = new HashMap<>(); // (File, Signal's (Signal of the file/key) BER)
 
         files.forEach(file -> {
             final var receiver = new Receiver(folderPath + file);
-            final var signalBER = receiver.bitErrorRate();
-
-            signalsData.put(file, signalBER);
-        });
-
-        for (String file: signalsData.keySet()) {
             System.out.printf("File " + file + " :\n");
-            final var signalBER = signalsData.get(file);
-
-            System.out.println(signalBER + '\n');
+            System.out.printf("BER: " + receiver.bitErrorRate() + '\n');
             System.out.println("----------------------");
-        }
+        });
     }
 
     private static List<String> loadFolderFiles(File folder) {
