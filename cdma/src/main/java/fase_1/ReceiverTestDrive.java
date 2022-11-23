@@ -9,7 +9,7 @@ import java.util.Objects;
 public class ReceiverTestDrive {
 
     public static void main(String[] args) {
-        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/untitled/signals/fase_1/"; // TODO: Change the file Path
+        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/cdma/signals/fase_1/"; // TODO: Change the file Path
         final var files = ReceiverTestDrive.loadFolderFiles(new File(folderPath));
 
         files.forEach(file -> {

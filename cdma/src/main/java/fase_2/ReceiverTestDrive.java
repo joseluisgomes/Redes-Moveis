@@ -6,7 +6,7 @@ import java.util.*;
 public class ReceiverTestDrive {
 
     public static void main(String[] args) {
-        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/untitled/signals/fase_2/"; // TODO: Change the file Path
+        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/cdma/signals/fase_2/"; // TODO: Change the file Path
         final var files = ReceiverTestDrive.loadFolderFiles(new File(folderPath));
         final Map<String , Map<Integer, String>> signalsData = new HashMap<>(); // Signal's Bit Error Rates
 

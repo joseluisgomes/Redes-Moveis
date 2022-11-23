@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cdma" target="18" />
+      <module name="cdma" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
