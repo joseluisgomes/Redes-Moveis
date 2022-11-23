@@ -14,7 +14,6 @@ public class Receiver {
     private final List<Float> spreadingCode;
     private final Integer spreadingFactor;
 
-
     public Receiver(String filePath) {
         final List<String> signalData = new ArrayList<>();
         try(var buffer = new BufferedReader(new FileReader(filePath))) {

@@ -2,15 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaaafc5e-e00e-45a7-9b69-09a77b56f085" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/fase_1/Receiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/fase_1/ReceiverTestDrive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/fase_2/Receiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/fase_2/ReceiverTestDrive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/fase_3/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/fase_3/ReceiverTestDrive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/Receiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ReceiverTestDrive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/Excel Graficos.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/libraries/Maven__org_jfree_jfreechart_1_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/cdma.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/cdmaLogic.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_-0.5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_-1dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_-2dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_0dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_1dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_2dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/c3_5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/e1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_1/e2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c4_0dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c4_10dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c4_15dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c4_5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c5_15dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c5_20dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c6_0dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c6_15dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/c6_5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_2/d5_20dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_3/c6_10dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_3/c6_20dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_4/c7_5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/signals/fase_4/c8_5dB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_1/Receiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_1/ReceiverTestDrive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_2/Receiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_2/ReceiverTestDrive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_3/Receiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_3/ReceiverTestDrive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/fase_3/Transmitter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/fase_1/Receiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/fase_1/ReceiverTestDrive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/fase_2/Receiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/fase_2/ReceiverTestDrive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/fase_3/Receiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/fase_3/ReceiverTestDrive.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,17 +69,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/joseluisgomes/Github/UMinho/Redes-Moveis",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/joseluisgomes/Github/UMinho/Redes-Moveis&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
