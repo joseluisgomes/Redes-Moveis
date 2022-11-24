@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4969e187-312d-4d5e-b553-1fe35ef908fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cdma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cdma.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fase_3/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fase_3/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fase_3/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fase_3/ReceiverTestDrive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -97,6 +97,14 @@ public class Receiver {
         return spreadingCodeExpanded;
     }
 
+    public List<Float> expandSpreadingCode(int limit, List<Float> spreadingCode) {
+        final List<Float> spreadingCodeExpanded = new ArrayList<>();
+
+        for (int i = 0; i < limit; i++)  // Expand the spreading code
+            spreadingCodeExpanded.addAll(spreadingCode);
+        return spreadingCodeExpanded;
+    }
+
     public List<Double> pearsonCorrelationValues() {
         List<Float> expandedSpreadingCode = expandSpreadingCode(spreadingFactor);
         final var numOfShits = expandedSpreadingCode.size(); // Total number of shifts
@@ -107,13 +115,17 @@ public class Receiver {
                 .toArray();
 
         for (int i = 0; i < numOfShits; i++) {
-            Collections.rotate(expandedSpreadingCode, i); // Perform a shift of 'i' unities over the given spreading code (expanded)
-            final var expandedShiftedSpreadingCode = expandSpreadingCode(156250).stream()
+            if (i == 0)
+                Collections.rotate(expandedSpreadingCode, 0); // Perform a shift of 'i' unities over the given spreading code (expanded)
+            else
+                Collections.rotate(expandedSpreadingCode, 1);
+
+            final var expandedShiftedSpreadingCode = expandSpreadingCode(31250, expandedSpreadingCode).stream()
                     .mapToDouble(Float::floatValue)
                     .toArray();
-           pearsonCorrelationValues.add(
-                   pearsonsCorrelation.correlation(expandedShiftedSpreadingCode, sampledSignalToArray)
-           );
+            pearsonCorrelationValues.add(
+                    pearsonsCorrelation.correlation(expandedShiftedSpreadingCode, sampledSignalToArray)
+            );
         }
         return pearsonCorrelationValues;
     }
