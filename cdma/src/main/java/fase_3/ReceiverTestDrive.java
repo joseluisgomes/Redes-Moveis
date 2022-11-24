@@ -13,7 +13,6 @@ public class ReceiverTestDrive {
         files.forEach(file -> {
             final var receiver = new Receiver(folderPath + file);
             final var signalBER = receiver.bitErrorRate();
-
             signalsData.put(file, signalBER);
         });
 

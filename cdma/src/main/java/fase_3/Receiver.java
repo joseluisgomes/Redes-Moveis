@@ -1,10 +1,13 @@
 package fase_3;
 
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,6 +16,7 @@ public class Receiver {
     private final List<Float> transmittedData;
     private final List<Float> spreadingCode;
     private final Integer spreadingFactor;
+    private final PearsonsCorrelation pearsonsCorrelation;
 
     public Receiver(String filePath) {
         final List<String> signalData = new ArrayList<>();
@@ -32,6 +36,7 @@ public class Receiver {
                 .map(Float::valueOf)
                 .collect(Collectors.toList());
         this.spreadingFactor = Integer.parseInt(signalData.get(3));
+        this.pearsonsCorrelation = new PearsonsCorrelation();
     }
 
     public List<Float> getSampledSignal() {
@@ -84,40 +89,45 @@ public class Receiver {
         return bits;
     }
 
-    private void rotateChip() {
+    public List<Float> expandSpreadingCode(int limit) {
+        final List<Float> spreadingCodeExpanded = new ArrayList<>();
 
-        for(int i = 0; i < spreadingCode.size()+1; i++) {
+        for (int i = 0; i < limit; i++)  // Expand the spreading code
+            spreadingCodeExpanded.addAll(spreadingCode);
+        return spreadingCodeExpanded;
+    }
 
-            int j;
-            Float last;
-            //Stores the last element of array
-            last = spreadingCode.get(spreadingCode.size() - 1);
+    public List<Double> pearsonCorrelationValues() {
+        List<Float> expandedSpreadingCode = expandSpreadingCode(spreadingFactor);
+        final var numOfShits = expandedSpreadingCode.size(); // Total number of shifts
+        final var pearsonCorrelationValues = new ArrayList<Double>();
 
-            for (j = spreadingCode.size() - 1; j > 0; j--) {
-                //Shift element of array by one
-                spreadingCode.set(j, spreadingCode.get(j - 1));
-            }
-            //Last element of array will be added to the start of array.
-            spreadingCode.set(0, last);
+        final var sampledSignalToArray = sampledSignal.stream()
+                .mapToDouble(Float::floatValue)
+                .toArray();
 
-
-            System.out.println();
-
-            //Displays resulting array after rotation
-            System.out.println("Array after right rotation: ");
-
-            for (Float p : spreadingCode) {
-
-                System.out.print(p + " ");
-
-            }
+        for (int i = 0; i < numOfShits; i++) {
+            Collections.rotate(expandedSpreadingCode, i); // Perform a shift of 'i' unities over the given spreading code (expanded)
+            final var expandedShiftedSpreadingCode = expandSpreadingCode(156250).stream()
+                    .mapToDouble(Float::floatValue)
+                    .toArray();
+           pearsonCorrelationValues.add(
+                   pearsonsCorrelation.correlation(expandedShiftedSpreadingCode, sampledSignalToArray)
+           );
         }
-
+        return pearsonCorrelationValues;
     }
 
     private List<Float> decodeSignal() {
-        final var spreadCodeVolts = bitsToVolts(spreadingCode); // Spreading code in volts
+        final var maxPearsonCorrelationValue = Collections.max(pearsonCorrelationValues());
+        int maxPearsonCorrelationValueIndex = pearsonCorrelationValues().indexOf(maxPearsonCorrelationValue);
+
+        final var expandedSpreadingCode = expandSpreadingCode(spreadingFactor);
+        Collections.rotate(expandedSpreadingCode, maxPearsonCorrelationValueIndex);
+
+        final var spreadCodeVolts = bitsToVolts(expandedSpreadingCode); // Spreading code in volts
         final var samplesPerChip = samplesPerChip();
+
         final List<Float> result = new ArrayList<>(); // Product's result
         int j = 0; // Spreading code counter
 
