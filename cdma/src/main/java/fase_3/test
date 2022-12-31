@@ -24,3 +24,7 @@ private List<Float> shiftSpreadingCode(int numberOfShifts,
  /*       final List<Float> expandedSpreadingCodeShifted = Collections.rotate(expandedSpreadingCode, numberOfShifts);
         return expandedSpreadingCodeShifted; */
     }
+
+
+
+

@@ -6,7 +6,7 @@ import java.util.*;
 public class ReceiverTestDrive {
 
     public static void main(String[] args) {
-        final var folderPath = "/home/joseluisgomes/Github/UMinho/Redes-Moveis/cdma/signals/fase_3/"; // TODO: Change the folder path
+        final var folderPath = "/home/luis/GitHub/UM/Redes-Moveis/cdma/signals/fase_3/"; // TODO: Change the folder path
         final var files = ReceiverTestDrive.loadFolderFiles(new File(folderPath));
         final Map<String, String> signalsData = new HashMap<>(); // (File, Signal's (Signal of the file/key) BER)
 

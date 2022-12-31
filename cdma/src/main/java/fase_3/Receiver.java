@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.Collections.rotate;
+
 public class Receiver {
     private final List<Float> sampledSignal; // Sampled CDMA signal
     private final List<Float> transmittedData;
@@ -107,19 +109,21 @@ public class Receiver {
 
     public List<Double> pearsonCorrelationValues() {
         List<Float> expandedSpreadingCode = expandSpreadingCode(spreadingFactor);
-        final var numOfShits = expandedSpreadingCode.size(); // Total number of shifts
+        final var numOfShits = 80; // Total number of shifts
         final var pearsonCorrelationValues = new ArrayList<Double>();
 
         final var sampledSignalToArray = sampledSignal.stream()
                 .mapToDouble(Float::floatValue)
                 .toArray();
 
+        // Perform a shift of 'i' unities over the given spreading code (expanded)
         for (int i = 0; i < numOfShits; i++) {
             if (i == 0)
-                Collections.rotate(expandedSpreadingCode, 0); // Perform a shift of 'i' unities over the given spreading code (expanded)
+                rotate(expandedSpreadingCode, 0); // 1st iteration => shift of 0 unities
             else
-                Collections.rotate(expandedSpreadingCode, 1);
+                rotate(expandedSpreadingCode, 1); // Shift of 1 unity
 
+            // Expand the previous shifted SC (of size 80) to 2.5 Million: 31250 * 80 = 2.5M
             final var expandedShiftedSpreadingCode = expandSpreadingCode(31250, expandedSpreadingCode).stream()
                     .mapToDouble(Float::floatValue)
                     .toArray();
@@ -131,11 +135,13 @@ public class Receiver {
     }
 
     private List<Float> decodeSignal() {
-        final var maxPearsonCorrelationValue = Collections.max(pearsonCorrelationValues());
-        int maxPearsonCorrelationValueIndex = pearsonCorrelationValues().indexOf(maxPearsonCorrelationValue);
+        final var pearsonCorrelationValues = pearsonCorrelationValues();
+        final var maxPearsonCorrelationValue = Collections.max(pearsonCorrelationValues);
+
+        int maxPearsonCorrelationValueIndex = pearsonCorrelationValues.indexOf(maxPearsonCorrelationValue);
 
         final var expandedSpreadingCode = expandSpreadingCode(spreadingFactor);
-        Collections.rotate(expandedSpreadingCode, maxPearsonCorrelationValueIndex);
+        rotate(expandedSpreadingCode, maxPearsonCorrelationValueIndex);
 
         final var spreadCodeVolts = bitsToVolts(expandedSpreadingCode); // Spreading code in volts
         final var samplesPerChip = samplesPerChip();
