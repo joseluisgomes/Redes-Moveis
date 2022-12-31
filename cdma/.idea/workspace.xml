@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4969e187-312d-4d5e-b553-1fe35ef908fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/Redes-Moveis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Redes-Moveis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fase_3/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fase_3/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fase_3/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fase_3/ReceiverTestDrive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fase_3/test" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fase_3/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fase_3/Receiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fase_3/Receiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fase_3/ReceiverTestDrive.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fase_3/ReceiverTestDrive.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,16 +55,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fase_3/Receiver.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

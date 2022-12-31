@@ -141,7 +141,7 @@ public class Receiver {
         int maxPearsonCorrelationValueIndex = pearsonCorrelationValues.indexOf(maxPearsonCorrelationValue);
 
         final var expandedSpreadingCode = expandSpreadingCode(spreadingFactor);
-        rotate(expandedSpreadingCode, maxPearsonCorrelationValueIndex);
+        rotate(expandedSpreadingCode, 2);
 
         final var spreadCodeVolts = bitsToVolts(expandedSpreadingCode); // Spreading code in volts
         final var samplesPerChip = samplesPerChip();
