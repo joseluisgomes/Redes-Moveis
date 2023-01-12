@@ -5,13 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaaafc5e-e00e-45a7-9b69-09a77b56f085" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_4/Receiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_4/ReceiverMultiSignal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_4/ReceiverTestDrive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Redes-Moveis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Redes-Moveis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/hs_err_pid17820.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/hs_err_pid18190.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_1/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_1/ReceiverTestDrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_2/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_2/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_2/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_2/ReceiverTestDrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_3/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_3/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_3/ReceiverTestDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_3/ReceiverTestDrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_3/test" beforeDir="false" />
     </list>
-    <list id="0b092a0f-42e5-4bbe-8963-50d044229c26" name="Changes by diogo" comment="">
-      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_3/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/fase_3/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_3/test" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/fase_3/test" afterDir="false" />
+    <list id="34a57694-e15a-4a1e-84e6-0101c1ac8210" name="Changes by a2705" comment="">
+      <change beforePath="$PROJECT_DIR$/cdma/src/main/java/fase_1/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/cdma/src/main/java/demo_1/Receiver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/cdma/src/main/java/fase_2/ReceiverTestDrive.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cdma/src/main/java/demo_2/ReceiverTestDrive.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,23 +56,70 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/luis/GitHub/UM/Redes-Moveis",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.22949219",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/luis/GitHub/MIETI/Redes-Moveis/cdma/src/main/java/demo_5",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.24437928",
+    "project.structure.side.proportion": "0.4385511",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="ReceiverTestDrive_Fase2" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-19-openjdk" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ReceiverTestDrive" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cdma/src/main/java/demo_5" />
+      <recent name="$PROJECT_DIR$/cdma/src/main/java/fase_4" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="demo_4" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.demo_4.ReceiverTestDrive">
+    <configuration name="ReceiverTestDrive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo_2.ReceiverTestDrive" />
       <module name="Redes-Moveis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="demo_3.ReceiverTestDrive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo_3.ReceiverTestDrive" />
+      <module name="Redes-Moveis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="demo_4.ReceiverTestDrive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo_4.ReceiverTestDrive" />
+      <module name="Redes-Moveis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo_4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.demo_4.ReceiverTestDrive" />
+        <item itemvalue="Application.demo_3.ReceiverTestDrive" />
+        <item itemvalue="Application.ReceiverTestDrive" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,17 +142,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/cdma/src/main/java/fase_3/ReceiverTestDrive.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
